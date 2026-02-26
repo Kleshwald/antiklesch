@@ -1,0 +1,21 @@
+# Source data (не публикуем)
+*.xlsx
+*.pdf
+yugoria_raw.json
+geocode_cache.json
+addr_geocode_cache.json
+_ren_b64.txt
+_yug_b64.txt
+output.txt
+data.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE / OS
+.claude/
+.vscode/
+Thumbs.db
+.DS_Store
