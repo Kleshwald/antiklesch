@@ -296,6 +296,7 @@ html, body {
   min-height: 64px;
 }
 .header-logo { flex-shrink: 0; height: 28px; width: auto; }
+.header-logo-icon { display: none; flex-shrink: 0; height: 28px; width: auto; cursor: pointer; }
 .header-title {
   position: absolute;
   left: 50%;
@@ -638,7 +639,8 @@ html, body {
 /* === MOBILE === */
 @media (max-width: 767px) {
   .header { padding: 10px 16px; min-height: 52px; }
-  .header-logo { height: 22px; }
+  .header-logo { display: none; }
+  .header-logo-icon { display: block; height: 22px; }
   .header-insurer-logo-btn { width: 30px; height: 30px; }
   .header-title { font-size: 11px; }
   .search-panel { padding: 10px 14px; }
@@ -882,6 +884,9 @@ html, body {
       <path d="M1367.56 436.118V258.642H1380.75L1453.46 415.659L1525.44 258.642H1539.12V435.872H1525.19V291.303L1459.13 436.118H1447.55L1381.36 291.303V436.118H1367.56Z" fill="white"/>
       <path d="M1622.91 436.118V361.184L1563.75 258.642H1580.14L1630.06 344.915L1679.85 258.642H1696.24L1637.21 361.184V436.118H1622.91Z" fill="white"/>
     </svg>
+    <svg class="header-logo-icon" viewBox="0 0 405 444" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="showWelcome()" style="cursor:pointer" title="На главную">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M405.192 443.058H0L143.137 2.63533H262.055L405.192 443.058ZM110.738 365.714H293.66L201.608 85.2076L110.738 365.714Z" fill="white"/>
+    </svg>
     <div class="header-title">КУДА ОБРАТИТЬСЯ ПРИ УКУСЕ КЛЕЩА</div>
   </div>
 
@@ -1018,6 +1023,11 @@ function updateHeaderInsurer() {}
 
 function showWelcome() {
   document.getElementById('welcome').classList.remove('hidden');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('suggestions').innerHTML = '';
+  document.getElementById('resultsPanel').classList.remove('visible');
+  document.getElementById('nearestList').innerHTML = '';
+  document.getElementById('detail').classList.remove('visible');
 }
 
 function showPolicy() {
